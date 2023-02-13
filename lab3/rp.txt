@@ -1,0 +1,16 @@
+	// 1. Write to Data '0'(0x30) to SRAM 0x234
+		// Write To Memory : MEM, bCE=0, bWE=0, Addr=0x234;
+		// (bCE and bWE can be different based on your previous design.)
+	// 2. Send a read command to SRAM
+		// Write To Memory : MEM, bCE=0, bWE=1, Addr=0x234;
+		// (bCE and bWE can be different based on your previous design.)
+// 3. Read Data from the bus
+// 4. Transmit data which is read from SRAM through UART
+
+
+priorities 
+
+ACB along with the sequence of if-else 
+	  if(BREQ2.read())	IntGrant = 4;     // 100
+    else if(BREQ0.read())	IntGrant = 1; // 001
+    else if(BREQ1.read())	IntGrant = 2; // 010
