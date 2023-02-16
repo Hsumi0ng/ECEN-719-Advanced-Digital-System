@@ -1,5 +1,5 @@
 This is because the size of the NMS kernel is smaller relative to the edges given by the gradient image.
 For example, look at the shoulder of this person. In the gradient output, the edge is about 6 pixels wide, however, our NMS kernel is only 3x3 large.
-When suppressing this edge, 2 pixels are eventually left unsuppressed due to the locality or limited of the NMS kernel. As a result, there are double lines.
+When suppressing this edge, 2 pixels are eventually left unsuppressed due to the locality or limit of the NMS kernel. As a result, there are double lines.
 To solve this problem, we can enlarge the NMS kernel to a reasonable size.
 A better approach is to use different size NMS kernels to filter the input and collect the output to determine the actual edges.
